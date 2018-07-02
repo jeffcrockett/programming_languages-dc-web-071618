@@ -33,11 +33,11 @@ languages = {
 }
 
 def reformat_languages(languages)
-  binding.pry
   new_hash = {}
   languages.each do |style, lang|
     lang.each do |name, info|
       new_hash[:language_name] = {}
     end
   end
+    binding.pry
 end
