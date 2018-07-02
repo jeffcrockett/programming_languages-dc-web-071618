@@ -34,15 +34,20 @@ languages = {
 
 def reformat_languages(languages)
   new_hash = {}
-  languages.each do |style, lang|
-    lang.each do |name, info|
+  languages.each do |style, language_hash|
+    language_hash.each do |name, info|
       new_hash[name] = {}
       new_hash[name][:style] = []
     end
   end
   
-    binding.pry
-  # languages.each do |style, lang|
-  #   new_hash[]
-  # end
+  languages.each do |style, language_hash|
+    new_hash.each do |name|
+      if language_hash.keys.include?(name)
+        new_hash[:style] << style
+      end
+    end
+  end
+  binding.pry
+
 end
