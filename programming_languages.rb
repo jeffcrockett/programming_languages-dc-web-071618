@@ -45,7 +45,7 @@ def reformat_languages(languages)
     new_hash.each do |language_name, language_stats|
       if language_hash.keys.include?(language_name)
         binding.pry
-        language_stats << style
+        language_stats[:style] << style
       end
     end
   end
