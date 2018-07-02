@@ -42,17 +42,19 @@ def reformat_languages(languages)
   end
   
   languages.each do |style, language_hash|
-    new_hash.each do |language_name, language_stats|
-      if language_hash.keys.include?(language_name)
-        language_stats[:style] << style
+    new_hash.each do |new_hash_name, new_hash_stats|
+      if language_hash.keys.include?(new_hash_name)
+        new_hash_stats[:style] << style
       end
     end
   end
   
   languages.each do |style, language_hash|
     language_hash.each do |language_name, style_hash|
-      new_hash.each do |language_name, language_stats|
-      language_stats[:type] = style_hash[:type]
+      new_hash.each do |new_hash_name, new_hash_stats|
+        if new_hash_name == language_name
+          new_hash_stats[:type] = style_hash[:type]
+        end
       end
     end
   end
